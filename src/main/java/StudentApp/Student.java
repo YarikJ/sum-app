@@ -17,31 +17,33 @@ public class Student {
         numStudent++;
     }
 
-    public String toString(Student person){
-        return "Student's info: \n name- "+ person.name + "\n family name - " + person.familyName+ "\n id -" + person.id;
+    public String toString() {
+        return "Student's info: \n name- "+ this.name + "\n family name - " + this.familyName+ "\n id -" + this.id;
     }
-    public String getName (){
+
+    public String getName() {
         return name;
     }
-    public String getFamilyName (){
+
+    public String getFamilyName() {
         return familyName;
     }
-    public double getAverageMark (ArrayList<Integer> marks) {
-        if (marks.isEmpty()) return 0;
-        else {
-            int sum = 0;
-            for (Integer el : marks) {
-                sum += el;
-            }
-            return (double) sum / marks.size();
-        }
+
+    public double getAverageMark(ArrayList<Integer> marks) {
+        return averageMark;
     }
+
     public void setMarks (int mark){
        this.marks.add(mark);
+        int sum = 0;
+        for (Integer el : marks) {
+            sum += el;
+        }
+        averageMark = (double) sum / marks.size();
     }
 
     public String getInfo (){
-        return this.toString(this);
+        return this.toString();
     }
 
 }
